@@ -1,13 +1,21 @@
-﻿// Task 02 [The sum of average elements]
-// Сумма средних элементов
-// 
-// Дан вектор вещественных/дробных значений. Необходимо спроектировать эффективный
-// алгоритм и реализовать функцию (или программу), которая находит сумму всех
-// элементов вектора, абсолютная величина которых меньше среднего арифметического
-// всех элементов. 
-// Дополнительно в функции необходимо предусмотреть механизм "защиты от дурака"
-// для работы с некорректными данными (в данном случае функция должна 
-// возвращать значение -1).
-// 
-// Далее необходимо разработать полноценный или тестовый проект для полной 
-// демонстрации работоспособности данной функции.
+﻿#include "logic.h"
+using namespace std;
+
+void is_same_elements(double array[], int size, double num_1, double num_2, double num_3, double arithmetic_mean, double sum_mean) {
+
+    if (size <= 0) {
+        sum_mean = -1;
+        return;
+    }
+
+    arithmetic_mean = (num_1 + num_2 + num_3) / 3;
+
+    sum_mean = 0;
+    if (abs(num_1) < arithmetic_mean) sum_mean += num_1;
+    if (abs(num_2) < arithmetic_mean) sum_mean += num_2;
+    if (abs(num_3) < arithmetic_mean) sum_mean += num_3;
+
+    cout << "Arithmetic_mean - " << arithmetic_mean << endl;
+    cout << "Sum_mean - " << sum_mean << endl;
+}
+
