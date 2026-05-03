@@ -27,4 +27,5 @@ void reverse(int array[], int size, int a, int b) {
 		a++;
 	}
 
+	return;
 }
